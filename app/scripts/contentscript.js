@@ -1,19 +1,16 @@
 'use strict';
 
-var isChrome = !!window.chrome;
-
+// Найдём в DOM id плеера
 var player = document.querySelector('#player');
 
 function removeAd() {
-
     // Если в DOM присутствуют элементы управления воспроизведеним рекламы, то скрываем рекламу.
     if (document.getElementsByClassName('videoAdUi').length > 0) {
         document.getElementsByClassName('video-stream html5-main-video')[0].src = '';
     }
 }
 
-function hideOverlayAd() {
-
+function removeAdContainer() {
     // Скрываем обёртку
     var overlayAdContainer = document.getElementsByClassName('ad-container ad-container-single-media-element-annotations')[0];
     if (overlayAdContainer && overlayAdContainer.style.display !== 'none') {
@@ -23,7 +20,7 @@ function hideOverlayAd() {
 
 function clearAds() {
     removeAd();
-    hideOverlayAd();
+    removeAdContainer();
 }
 
 function DOMSTlistener(e) {
@@ -42,13 +39,7 @@ function init() {
     }
 }
 
-
+//Вешаем обработчик событий только на YouTube
 if (/https?:\/\/(\w*.)?youtube.com/i.test(window.location.href.toLowerCase())) {
-
-    if (isChrome) {
-        player.addEventListener('DOMSubtreeModified', init);
-    } else {
-        clearAds();
-    }
-
+    player.addEventListener('DOMSubtreeModified', init);
 }
