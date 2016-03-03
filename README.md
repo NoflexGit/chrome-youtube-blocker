@@ -1,5 +1,7 @@
 # Youtube Adv Blocker
 
+Yeoman + Gulp + Sass
+
 ```shell
 npm install
 ```
