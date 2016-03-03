@@ -8,14 +8,9 @@ npm install
 bower install
 ```
 
-Gulp tasks:
+Gulp таски:
 
 Watch project
-```shell
-gulp watch
-```
+`gulp build` — следит за обновлением файлов и пересобирает проект 
 
-Create dist folder
-```shell
-gulp dist
-```
+`gulp build` — делает сборку проекта.
