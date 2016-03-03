@@ -1,0 +1,61 @@
+//=================================//
+//                                 
+//  Project: YouTube Ad Blocker    
+//  Developer: Unt Roman
+//                    
+//=================================//
+
+// Import deps
+//==================================
+
+@import 'includes/variables';
+
+//==================================
+
+
+// Common styles
+//==================================
+
+body {
+  padding-top: $body_padding-top;
+  padding-bottom: $body_padding-bot;
+  text-align: center;
+  width: $body_width;
+}
+
+small {
+    padding: 5px 7px;
+    background: $color_red;
+    color: $color_white;
+}
+
+.pulse {
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    width: $indicator_width;
+    height: $indicator_height;
+    box-shadow: $indicator_box-shadow;
+    border-radius: 50%;
+    background-color: $color_green;
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+
+// Pulse Animation
+
+@-webkit-keyframes pulse {
+    to { box-shadow: $animation-shadow; }
+}
+
+@-moz-keyframes pulse {
+    to { box-shadow: $animation-shadow; }
+}
+
+@-ms-keyframes pulse {
+    to { box-shadow: $animation-shadow; }
+}
+
+@keyframes pulse {
+    to { box-shadow: $animation-shadow; }
+}

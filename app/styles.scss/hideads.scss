@@ -1,0 +1,9 @@
+// Hide ad blocks
+// This file uses DOM Selectors for hiding advertisments
+
+#watch7-sidebar-ads,
+.video-ads {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+}
